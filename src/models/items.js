@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const Os = sequelize.define(
-  "os",
+export const Items = sequelize.define(
+  "items",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,6 +11,12 @@ export const Os = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+    },
+    offer: {
+      type: DataTypes.FLOAT,
     }
   },
   {
