@@ -9,13 +9,15 @@ import {
     createItem,
     createUser,
     getCountryWithUser, 
-    getCountryWithUserGrouped
+    getCountryWithUserGrouped,
+    getItemsGroupBy
 } from "../controllers/index.js";
 
 // Routes
 router.put("/os/:id", updateOs);
 router.put("/user/:id", updateUser);
 router.get("/items", getItems);
+router.get("/getItemsGroupBy", getItemsGroupBy);
 router.get("/countrywithuser", getCountryWithUser);
 router.get("/countrywithusergrouped", getCountryWithUserGrouped);
 router.post("/item", createItem);
