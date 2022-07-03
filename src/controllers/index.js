@@ -8,7 +8,7 @@ import Sequelize from "sequelize";
 export async function createUser(req, res) {
   try {
     const { id_country, gender, birthday, name, lastname, nickname, email } = req.body;
-    
+
     if(id_country && isNaN(parseInt(id_country, 10))){
       res.status(400).json("Field id_country must be a valid number");
       return
@@ -62,6 +62,7 @@ export const updateUser = async (req, res) => {
 
     if(values?.id_country && parseInt(values?.id_country, 10) === NaN){
       res.status(400).json("Field id_country must be a valid number");
+      return
     }
 
     const user = await Users.findByPk(id);
