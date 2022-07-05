@@ -112,6 +112,7 @@ export const getItems = async (req, res) => {
 export const getCountryWithUser = async (req, res) => {
   try {
     const countries = await Countries.findAll({
+      attributes: ['name'],
       include: { model: Users, required: true },
     });
     res.status(200).json(countries);
